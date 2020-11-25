@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { searchList } from "../actions";
 
 const Search = () => {
 
   const [query, setQuery] = useState("")
+  const dispatch = useDispatch()
 
   const onInputChange = (e) => {
     setQuery(e.target.value)
@@ -23,16 +24,11 @@ const Search = () => {
           value={query}
           onChange={onInputChange}
         />
-        <button onClick={onButtonClick}>Search</button>
+        <button onClick={dispatch(searchList(query))}>Search</button>
       </div>
 
     </div>
   )
 }
 
-
-const mapDispatchToProps = {
-  searchList
-}
-
-export default connect(null, mapDispatchToProps)(Search);
+export default Search;
