@@ -1,3 +1,5 @@
+// Source: https://www.pluralsight.com/guides/react-redux-reusable-components
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
